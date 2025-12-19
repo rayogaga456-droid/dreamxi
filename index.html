@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream Xi Studios</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --primary: #6cf2c2;
+      --secondary: #6aa9ff;
+      --text: #e8ecf1;
+      --card: rgba(255,255,255,0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #060912, #0b1224, #050814);
+      background-size: 400% 400%;
+      animation: bgMove 18s ease infinite;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 2px;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    header p {
+      max-width: 600px;
+      margin-top: 1rem;
+      opacity: 0.85;
+      font-size: 1.1rem;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(108,242,194,0.3); }
+      to { text-shadow: 0 0 25px rgba(106,169,255,0.6); }
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .card h3 {
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    /* subtle animated background dots */
+    .bg-dots span {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 50%;
+      animation: float 20s linear infinite;
+      opacity: 0.3;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-10vh); }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(40px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+      to { transform: translateY(-10vh); }
+    }
+      .nav{
+      position:fixed; top:0; left:0; width:100%; z-index:1000;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 2rem; backdrop-filter:blur(12px);
+      background:rgba(10,15,30,0.6)
+    }
+    .logo{font-size:1.4rem; font-weight:700}
+    .logo span{color:var(--primary)}
+    .nav-links{list-style:none; display:flex; gap:2rem}
+    .nav-links a{color:var(--text); text-decoration:none; position:relative}
+    .nav-links a::after{
+      content:''; position:absolute; left:0; bottom:-4px; width:0; height:2px;
+      background:linear-gradient(90deg,var(--primary),var(--secondary)); transition:0.3s
+    }
+    .nav-links a:hover::after{width:100%}
+    
+      .nav-links{
+        position:fixed; top:0; right:-100%; height:100vh; width:70%;
+        background:rgba(10,15,30,0.95); flex-direction:column;
+        justify-content:center; align-items:center; transition:0.5s
+      }
+      .nav-links.active{right:0}
+    }
+
+    .hero-orb{
+      position:absolute; width:520px; height:520px; border-radius:50%;
+      background:conic-gradient(from 0deg, var(--primary), var(--secondary), var(--primary));
+      filter:blur(90px); opacity:0.55;
+      animation:orb 14s infinite alternate
+    }
+
+    @keyframes orb{
+      from{transform:translate(-100px,-50px)}
+      to{transform:translate(120px,80px)}
+    }
+
+    </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav" style="justify-content:center">
+    <img src="WhatsApp Image 2025-12-07 at 13.48.31_82f5ff80.jpg" alt="Dream Xi Logo" style="height:52px; filter:drop-shadow(0 0 18px rgba(108,242,194,0.6))" />
+  </nav>
+
+  <header>
+    <div class="hero-orb"></div>
+    <h1>Dream Xi Studios</h1>
+    <p>
+      Dream Xi is a creative hub specializing in digital art, video edits, and anime-inspired content. We blend cutting-edge visuals with bold storytelling to craft unique experiences that captivate and inspire.
+    </p>
+  </header>
+
+  
+
+  <section>
+    <h2 style="text-align:center; margin-bottom:2rem; font-size:2rem; color:var(--secondary)">What We Do</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Tech & Coding</h3>
+        <p>Modern, responsive websites and applications built with clean, scalable code.</p>
+      </div>
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>Visual identities, UI designs, and digital art that speak your brand’s language.</p>
+      </div>
+      <div class="card">
+        <h3>Editing</h3>
+        <p>Professional video and image editing with a futuristic, polished finish.</p>
+      </div>
+    </div>
+    </section>
+
+  <section id="portfolio">
+    <h2 style="text-align:center; margin-bottom:2.5rem; font-size:2.2rem; background:linear-gradient(90deg,var(--primary),var(--secondary)); -webkit-background-clip:text; -webkit-text-fill-color:transparent">Featured Work</h2>
+    <div class="services">
+      <div class="card" style="animation: rise 0.8s ease both">
+        <h3>Anime Remix Cinematics</h3>
+        <p>High-impact edits with rhythmic cuts, color grading, and cinematic pacing inspired by anime culture.</p>
+        <a href="https://youtube.com/@dreamxistudios" target="_blank" style="display:inline-block; margin-top:1rem; color:var(--secondary); text-decoration:none">Watch on YouTube →</a>
+      </div>
+      <div class="card" style="animation: rise 1s ease both">
+        <h3>Viral TikTok Edits</h3>
+        <p>Fast, bold, scroll-stopping edits optimized for mobile attention and high engagement.</p>
+        <a href="https://www.tiktok.com/@dreamxi21" target="_blank" style="display:inline-block; margin-top:1rem; color:var(--secondary); text-decoration:none">View on TikTok →</a>
+      </div>
+      <div class="card" style="animation: rise 1.2s ease both">
+        <h3>Digital Art & Visuals</h3>
+        <p>Stylized graphics, posters, and visual concepts built with a futuristic, neon-forward aesthetic.</p>
+        <a href="https://www.instagram.com/dreamxistudio" target="_blank" style="display:inline-block; margin-top:1rem; color:var(--secondary); text-decoration:none">Explore on Instagram →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div style="margin-bottom:1rem; display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap">
+      <a href="https://www.instagram.com/dreamxistudio" target="_blank" style="color:var(--primary); text-decoration:none">Instagram</a>
+      <a href="https://www.tiktok.com/@dreamxi21" target="_blank" style="color:var(--primary); text-decoration:none">TikTok</a>
+      <a href="https://youtube.com/@dreamxistudios" target="_blank" style="color:var(--primary); text-decoration:none">YouTube</a>
+    </div>
+    © 2025 Dream Xi Studios • Crafted with creativity & code
+  </footer>
+
+</body>
+</html>
